@@ -4,17 +4,15 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://lin-zhixia-portfolio.ready-ghost-6190.chatgpt.site"),
   title: "阿迪莱 Adila｜个人网站",
-  description: "阿迪莱 Adila 的个人介绍、实习经历、项目经历与技能。",
+  description: "阿迪莱 Adila 的个人网站：消费者洞察、品牌传播、整合营销经历与项目。",
   openGraph: {
     title: "阿迪莱 Adila｜个人网站",
-    description: "Product · Design · Strategy",
-    images: [{ url: "/og.png", width: 1536, height: 1024, alt: "阿迪莱 Adila 个人网站" }],
+    description: "Consumer Insight · Brand Marketing · Strategy",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "阿迪莱 Adila｜个人网站",
-    description: "Product · Design · Strategy",
-    images: ["/og.png"],
+    description: "Consumer Insight · Brand Marketing · Strategy",
   },
   icons: {
     icon: "/favicon.svg",

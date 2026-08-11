@@ -25,6 +25,7 @@ a { color: inherit; text-decoration: none; }
 
 .hero { min-height: calc(100svh - 78px); padding-block: 54px 62px; display: grid; grid-template-columns: .92fr 1.08fr; gap: 8vw; align-items: center; }
 .portrait-frame { height: min(67vh, 690px); padding: 12px; border: 1px solid var(--line); border-radius: calc(var(--radius) + 7px); background: rgba(255,255,255,.34); }
+.portrait-frame img { width: 100%; height: 100%; display: block; border-radius: var(--radius); object-fit: cover; object-position: center 48%; }
 .portrait-placeholder { height: 100%; border-radius: var(--radius); overflow: hidden; background: linear-gradient(155deg, #cdd5ce, #e9e7df 62%, #c6cec7); display: flex; flex-direction: column; align-items: center; justify-content: center; color: rgba(39,50,45,.58); position: relative; }
 .portrait-placeholder::before { content: ""; position: absolute; width: 58%; aspect-ratio: 1; border: 1px solid rgba(39,50,45,.16); border-radius: 50%; top: 16%; }
 .portrait-placeholder::after { content: ""; position: absolute; width: 72%; height: 34%; border-radius: 50% 50% 0 0; border: 1px solid rgba(39,50,45,.16); bottom: -1px; }

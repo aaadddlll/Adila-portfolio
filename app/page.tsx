@@ -8,27 +8,27 @@ export const metadata: Metadata = {
 
 const experiences = [
   {
-    period: "2025.03 — 至今",
-    company: "某头部互联网公司",
-    role: "产品设计实习生 · 用户增长",
-    intro: "负责增长场景中的核心体验设计，从问题定义、用户研究到方案落地，与产品和研发共同推进实验。",
-    points: ["重构新用户激活路径，关键步骤转化率提升 18%", "建立可复用的营销组件规范，交付效率提升 30%", "独立完成 12 场用户访谈，将洞察转化为 4 项产品优化"],
-    tags: ["用户研究", "交互设计", "A/B Test", "数据分析"],
+    period: "2026.06 — 至今",
+    company: "百事中国",
+    role: "Marketing Intern · 桂格燕麦 VA 线",
+    intro: "负责新品发酵燕麦的种草推广与品牌升级营销，围绕消费者认知增长推进社媒传播、品类策略、Campaign 与 AI 营销探索。",
+    points: ["合作 59 位达人，实现曝光 1.05 亿+、互动 105 万+，核心人群规模增长 40%", "参与桂格 × 奈雪的茶联名 Social Seeding 与发酵燕麦 14 天打卡活动，触达 1 万+ 人次", "开展燕麦竞品、产品矩阵与包装趋势研究，跟进 slogan、包装等消费者测试", "参与 GEO 项目，优化豆包、DeepSeek 等 AI 平台内容素材与搜索场景匹配"],
+    tags: ["社媒营销", "消费者洞察", "Campaign", "AI 营销"],
   },
   {
-    period: "2024.07 — 2024.12",
-    company: "创新消费科技公司",
-    role: "产品运营实习生 · 内容与社区",
-    intro: "围绕年轻用户的内容消费与创作链路，参与社区策略、活动策划和产品需求梳理。",
-    points: ["策划 3 期主题活动，累计覆盖 20W+ 用户", "搭建内容质量评估框架，优质内容占比提升 11%", "跟进 2 个版本迭代，从需求文档到上线复盘全程参与"],
-    tags: ["策略分析", "内容运营", "项目管理", "SQL"],
+    period: "2026.03 — 2026.06",
+    company: "玛氏中国",
+    role: "Marketing Intern · 皇家宠物食品 Pro 业务线",
+    intro: "面向 B 端繁育客户开展客户教育与赋能，同时连接繁育客户与 C 端消费者，负责内容增长、活动执行、生态运营及行业研究。",
+    points: ["从 0 到 1 搭建近两年内容数据库，小红书粉丝由 6000 增至 1.3 万，互动率提升 200%", "参与上海它博会 Campaign，新增注册用户 1000+、品牌账号新增粉丝 4000+", "优化繁育课程并举办它博会论坛，论坛满意度达到 98%", "联动 20 家核心繁育客户共创短视频，合作内容曝光及互动提升 200%-400%"],
+    tags: ["内容增长", "活动策划", "客户运营", "市场研究"],
   },
 ];
 
 const projects: Project[] = [
-  { no: "01", title: "让校园信息不再错过", type: "独立产品设计", year: "2025", desc: "从 0 到 1 设计校园活动聚合与提醒工具，解决信息分散、报名遗忘的问题。", result: "访谈 24 人 · 可用性测试完成率 92%", context: "校园活动信息散落在公众号、群聊与海报中，学生经常在看到信息后忘记报名或错过时间。", challenge: "既要降低信息获取成本，又不能让提醒本身成为新的打扰，同时需要适配校内活动频繁变化的实际情况。", process: ["访谈 24 位学生，梳理信息发现、收藏与报名链路", "归纳三类高频使用情境，搭建活动聚合信息架构", "完成两轮原型测试，优化筛选、收藏和提醒设置", "设计核心界面与可复用组件，整理完整交付说明"], contribution: "独立负责研究计划、需求定义、交互设计、视觉设计与可用性测试，并根据反馈推动两轮方案迭代。" },
-  { no: "02", title: "AI 求职陪练", type: "课程团队项目", year: "2024", desc: "面向应届生的结构化面试练习产品，提供岗位题库、实时追问与复盘建议。", result: "5 人团队 · 4 周完成 MVP", context: "应届生往往缺少低压力、高频次的模拟面试机会，也很难在练习后得到结构化反馈。", challenge: "如何让 AI 追问既贴近真实面试，又避免泛泛而谈，并将反馈转化为下一次练习中可以执行的行动。", process: ["分析 8 款求职与 AI 面试产品，确定差异化机会", "梳理岗位、题目、追问、复盘四段式核心流程", "与团队共同完成提示词测试和高保真原型", "邀请目标用户试用，依据反馈调整复盘信息层级"], contribution: "负责用户调研、核心流程与复盘模块设计，并协调团队在四周内完成可演示 MVP。" },
-  { no: "03", title: "社区内容增长实验", type: "数据分析项目", year: "2024", desc: "基于行为漏斗定位创作者流失节点，并设计分层激励与回流实验。", result: "提出 3 组实验 · 预估激活提升 15%", context: "社区新创作者注册后发布意愿较低，团队需要找出流失节点并验证低成本的激活方式。", challenge: "数据只能描述用户在哪里离开，还需要结合行为与动机解释为什么离开，并让策略具有可测试性。", process: ["拆解注册到首发的行为漏斗，识别三个关键流失点", "结合内容样本与访谈信息形成创作者分层", "针对不同人群设计引导、示例与激励实验", "明确实验指标、样本需求与风险监控方案"], contribution: "负责漏斗分析、用户分层与实验方案设计，将分析结论整理为团队可执行的增长路线图。" },
+  { no: "01", title: "桂格发酵燕麦整合营销", type: "新品种草与品牌升级", year: "2026", desc: "围绕新品发酵燕麦，推进达人种草、消费者洞察、联名传播及 AI 内容探索。", result: "曝光 1.05 亿+ · 互动 105 万+", context: "桂格燕麦 VA 线推出发酵燕麦新品，需要提升消费者对新品的认知，同时为品牌升级寻找更清晰的价值表达。", challenge: "针对不同目标消费者提炼准确且有吸引力的产品卖点，并在社媒内容、线下体验与生成式 AI 搜索场景中保持一致的品牌表达。", process: ["围绕目标消费者制定达人 Brief，明确卖点、消费场景与内容方向", "审核并优化达人稿件，结合 CPM、CPE、看后搜等指标复盘表现", "基于社媒评论、用户反馈与竞品研究提炼消费者沟通机会", "参与联名 Social Seeding、14 天打卡活动与 GEO 内容审核"], contribution: "负责达人内容审核优化、传播效果复盘与消费者洞察支持，并参与品牌升级测试及 Campaign 执行。" },
+  { no: "02", title: "皇家社媒内容增长", type: "内容运营与数据分析", year: "2026", desc: "从 0 到 1 搭建内容数据库，用数据识别受众偏差并优化小红书、抖音传播策略。", result: "小红书 6000→1.3 万 · 互动率 +200%", context: "皇家宠物食品 Pro 业务线希望通过抖音、小红书连接年轻养宠女性，并提升内容的消费者咨询与购买转化能力。", challenge: "历史内容缺乏系统沉淀，账号用户画像与目标人群存在偏差，需要先建立分析基础，再找到可以持续复制的内容规律。", process: ["搭建近两年内容表现数据库，整理播放、互动、评论与内容特征", "拆解历史表现，识别用户画像偏差与高表现内容规律", "围绕年轻养宠女性调整选题、视频形式与传播策略", "持续观察评论区咨询与购买意向，迭代内容方向"], contribution: "独立搭建内容数据库并完成分析，参与选题与传播策略优化，推动两个平台的粉丝与互动增长。" },
+  { no: "03", title: "上海它博会 Campaign", type: "线下活动与用户转化", year: "2026", desc: "围绕品牌曝光、合作伙伴展示和 C 端触达，参与大型宠物展 Campaign 的策划与落地。", result: "注册用户 1000+ · 新增粉丝 4000+", context: "皇家宠物食品希望借助上海它博会连接繁育客户与 C 端消费者，并将线下流量沉淀为可持续运营的用户资产。", challenge: "现场参与方多、触点复杂，需要同时兼顾品牌展示、合作伙伴体验与用户转化，并协调销售、客户、主办方和供应商。", process: ["参与传播内容、活动物料与现场运营方案准备", "设计试吃包体验、Portal 注册与账号关注等转化路径", "协同销售、客户、主办方及供应商推进项目落地", "结合活动反馈优化繁育课程，并支持专业论坛举办"], contribution: "负责传播内容、物料及现场运营支持，参与用户转化路径设计与跨团队协作，并支持论坛与客户赋能环节。" },
 ];
 
 export default function Home() {
@@ -39,20 +39,20 @@ export default function Home() {
         <nav aria-label="主导航">
           <a href="#about">About</a><a href="#work">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
         </nav>
-        <span className="status"><i /> Open to work</span>
+        <span className="status"><i /> 2027 届 · Open to work</span>
       </header>
 
       <section className="hero shell">
-        <div className="portrait" role="img" aria-label="阿迪莱的个人照片占位区域">
+        <div className="portrait">
           <div className="portrait-frame">
-            <div className="portrait-placeholder"><span>ADILA</span><small>请在这里放置你的照片</small></div>
+            <img src="/adila-portrait.jpg" alt="阿迪莱在秋日树林中的个人照片" />
           </div>
-          <p>Based in China · Available in 2026</p>
+          <p>East China Normal University · Class of 2027</p>
         </div>
         <div className="hero-copy">
-          <p className="kicker">Product · Design · Strategy</p>
+          <p className="kicker">Consumer Insight · Brand Marketing · Strategy</p>
           <h1><span>阿迪莱</span><span>Adila</span></h1>
-          <p className="hero-intro">你好，我是阿迪莱。<br/>一个对人、体验与好问题保持好奇的产品实践者。</p>
+          <p className="hero-intro">你好，我是阿迪莱。<br/>华东师范大学社会学本科生，关注消费者洞察、品牌传播与整合营销。</p>
           <a className="text-link" href="#about">继续了解我 <span>↓</span></a>
         </div>
       </section>
@@ -60,10 +60,10 @@ export default function Home() {
       <section className="about section shell" id="about">
         <div className="section-label"><span>01</span><p>About me</p></div>
         <div className="about-copy">
-          <h2>我喜欢从细微之处观察，<br/>把复杂问题整理成<br/><em>清晰、自然的体验。</em></h2>
+          <h2>我喜欢观察人和市场，<br/>把真实需求转化成<br/><em>清晰、有共鸣的沟通。</em></h2>
           <div className="about-notes">
-            <p>目前就读于 XX 大学 XX 专业，预计 2026 年毕业。我关心用户为什么做出某个选择，也享受把洞察变成真实产品的过程。</p>
-            <p>过去两年，我在互联网与消费科技团队中参与产品设计、增长实验和内容策略。比起只完成一张漂亮的界面，我更在意方案是否真正解决问题。</p>
+            <p>目前就读于华东师范大学社会学专业，预计 2027 年毕业。GPA 位于专业前 10%，持英语六级证书，并多次获得校级奖学金。</p>
+            <p>曾在百事中国和玛氏中国担任 Marketing Intern，实践覆盖消费者研究、社媒内容、KOL/KOC 合作、品牌 Campaign 与跨部门项目推进。</p>
           </div>
         </div>
       </section>
@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
       <section className="detail-section shell" id="experience">
-        <div className="detail-title"><span>Experience</span><h2>实习经历</h2><p>真实内容将在下一阶段替换</p></div>
+        <div className="detail-title"><span>Experience</span><h2>实习经历</h2><p>百事中国 · 玛氏中国</p></div>
         <div className="experience-list">
           {experiences.map((item, idx) => (
             <article className="exp-row" key={item.period}>
@@ -96,18 +96,18 @@ export default function Home() {
 
       <section className="skills section shell" id="skills">
         <div className="section-label"><span>03</span><p>Skills</p></div>
-        <div className="skills-copy"><h2>我的工作方式</h2><p>研究问题、设计方案、推动落地。保持好奇，也尊重每一个真实的限制。</p></div>
+        <div className="skills-copy"><h2>我的能力组合</h2><p>从消费者洞察出发，用内容和项目连接品牌、合作伙伴与真实用户。</p></div>
         <div className="skill-grid">
-          <div><span>01</span><h3>产品与设计</h3><p>用户研究 · 信息架构 · 交互设计 · 原型测试 · 设计系统</p></div>
-          <div><span>02</span><h3>策略与数据</h3><p>竞品分析 · 增长实验 · 数据分析 · SQL · 项目复盘</p></div>
-          <div><span>03</span><h3>常用工具</h3><p>Figma · FigJam · Notion · Axure · Python · Tableau</p></div>
+          <div><span>01</span><h3>消费者洞察</h3><p>深度访谈 · 问卷调查 · 社媒观察 · 竞品研究 · 市场机会分析</p></div>
+          <div><span>02</span><h3>品牌与营销</h3><p>内容策划 · KOL/KOC 合作 · Campaign 执行 · 小红书 · 抖音</p></div>
+          <div><span>03</span><h3>分析与协作</h3><p>NVivo · SPSS · Excel · 数据复盘 · 项目管理 · 跨部门协作</p></div>
         </div>
       </section>
 
       <footer className="shell" id="contact">
         <div><p>04 · Contact</p><h2>期待与你<br/>认识。</h2></div>
-        <div className="contact-links"><a href="mailto:hello@example.com">hello@example.com ↗</a><a href="#">LinkedIn ↗</a><a href="#">下载简历 ↗</a></div>
-        <div className="footer-note"><p>阿迪莱 Adila</p><p>© 2026 · China</p><a href="#top">回到顶部 ↑</a></div>
+        <div className="contact-links"><a href="mailto:13565459253@163.com">13565459253@163.com ↗</a><a href="tel:13565459253">135 6545 9253 ↗</a><a href="/adila-resume.pdf" download>下载简历 ↗</a></div>
+        <div className="footer-note"><p>阿迪莱 Adila</p><p>华东师范大学 · 2027 届</p><a href="#top">回到顶部 ↑</a></div>
       </footer>
     </main>
   );
