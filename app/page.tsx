@@ -23,6 +23,14 @@ const experiences = [
     points: ["从 0 到 1 搭建近两年内容数据库，小红书粉丝由 6000 增至 1.3 万，互动率提升 200%", "参与上海它博会 Campaign，新增注册用户 1000+、品牌账号新增粉丝 4000+", "优化繁育课程并举办它博会论坛，论坛满意度达到 98%", "联动 20 家核心繁育客户共创短视频，合作内容曝光及互动提升 200%-400%"],
     tags: ["内容增长", "活动策划", "客户运营", "市场研究"],
   },
+  {
+    period: "2025.06 — 2025.09",
+    company: "国融乐养健康科技公司",
+    role: "项目运营实习生",
+    intro: "面向上海社区老年群体开展需求研究与项目运营，围绕 AI 工具、短视频创作和直播学习等数字化内容，推动课程策划、用户运营与活动落地。",
+    points: ["通过访谈、活动反馈与线上社群观察识别老年群体数字化学习需求，支持课程体系优化", "策划并落地 AI 学习、短视频制作及直播教学等 10 余场活动，覆盖 500 余名用户，满意度达 95%", "对接讲师、场地及内部运营团队，协调排期、资源和执行需求，持续优化项目流程", "收集满意度问卷 400+ 份，复盘参与数据、预算与执行效果，输出项目总结报告"],
+    tags: ["需求洞察", "项目运营", "用户运营", "数据复盘"],
+  },
 ];
 
 const projects: Project[] = [
@@ -63,7 +71,7 @@ export default function Home() {
           <h2>我喜欢观察人和市场，<br/>把真实需求转化成<br/><em>清晰、有共鸣的沟通。</em></h2>
           <div className="about-notes">
             <p>目前就读于华东师范大学社会学专业，预计 2027 年毕业。GPA 位于专业前 10%，持英语六级证书，并多次获得校级奖学金。</p>
-            <p>曾在百事中国和玛氏中国担任 Marketing Intern，实践覆盖消费者研究、社媒内容、KOL/KOC 合作、品牌 Campaign 与跨部门项目推进。</p>
+            <p>曾在百事中国、玛氏中国和国融乐养实习，实践覆盖消费者研究、社媒内容、品牌 Campaign、用户运营与跨部门项目推进。</p>
           </div>
         </div>
       </section>
@@ -77,7 +85,7 @@ export default function Home() {
       </section>
 
       <section className="detail-section shell" id="experience">
-        <div className="detail-title"><span>Experience</span><h2>实习经历</h2><p>百事中国 · 玛氏中国</p></div>
+        <div className="detail-title"><span>Experience</span><h2>实习经历</h2><p>百事中国 · 玛氏中国 · 国融乐养</p></div>
         <div className="experience-list">
           {experiences.map((item, idx) => (
             <article className="exp-row" key={item.period}>
