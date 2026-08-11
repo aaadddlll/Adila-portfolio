@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f5f4ef;
-  --surface: #ebe9e1;
+  --paper: #ffffff;
+  --surface: #f4f5f2;
   --ink: #27322d;
   --muted: #6f7872;
   --line: #d2d3cc;
-  --soft: #dde3dd;
+  --soft: #eef1ee;
   --radius: 22px;
 }
 * { box-sizing: border-box; }
@@ -77,8 +77,9 @@ a { color: inherit; text-decoration: none; }
 .tags span { padding: 5px 11px; border: 1px solid var(--line); border-radius: 20px; font-size: 10px; color: var(--muted); }
 
 .project-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.project-card { min-height: 540px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); display: flex; flex-direction: column; background: rgba(255,255,255,.3); transition: transform .35s ease, box-shadow .35s ease; }
+.project-card { width: 100%; min-height: 540px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); display: flex; flex-direction: column; background: #fff; color: var(--ink); font: inherit; text-align: left; cursor: pointer; transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
 .project-card:hover { transform: translateY(-6px); box-shadow: 0 18px 46px rgba(39,50,45,.07); }
+.project-card:focus-visible, .project-detail button:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 .project-meta { display: grid; grid-template-columns: 1fr 2fr auto; font-size: 9px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
 .project-visual { height: 220px; margin: 32px 0 28px; border-radius: 15px; background: var(--soft); display: grid; place-items: center; position: relative; overflow: hidden; }
 .project-visual span { font-family: "Songti SC", STSong, serif; font-size: 96px; color: rgba(39,50,45,.34); }
@@ -87,6 +88,27 @@ a { color: inherit; text-decoration: none; }
 .project-card > p { margin: 0; color: var(--muted); font-size: 13px; }
 .project-result { margin-top: auto; padding-top: 15px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); }
 .project-result b { color: var(--ink); font-size: 16px; font-weight: 400; }
+.project-expanded { display: grid; grid-template-columns: minmax(280px, .85fr) minmax(0, 2fr); gap: 20px; align-items: stretch; animation: projectReveal .48s ease both; }
+.project-card-selected { min-height: 640px; }
+.project-card-selected:hover { transform: none; box-shadow: none; }
+.project-detail { min-height: 640px; padding: 34px 40px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); animation: detailEnter .5s .05s ease both; }
+.project-detail-head { padding-bottom: 30px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 24px; align-items: flex-start; }
+.project-detail-head small { color: var(--muted); font-size: 10px; letter-spacing: .12em; }
+.project-detail-head h3 { margin: 12px 0 0; font-family: "Songti SC", STSong, serif; font-size: clamp(32px, 4vw, 52px); line-height: 1.2; font-weight: 400; }
+.project-detail-head button { padding: 0; border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 11px; cursor: pointer; white-space: nowrap; }
+.project-detail-head button:hover { color: var(--ink); }
+.project-detail-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; }
+.project-detail-grid section { padding: 28px 0; border-bottom: 1px solid var(--line); }
+.project-detail-grid section > span { display: block; margin-bottom: 13px; color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+.project-detail-grid section p { margin: 0; font-size: 14px; line-height: 1.9; }
+.project-detail-grid .process { grid-column: 1 / -1; }
+.project-detail-grid ol { margin: 0; padding: 0; list-style: none; counter-reset: steps; display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
+.project-detail-grid li { counter-increment: steps; padding: 12px 0; border-top: 1px solid rgba(39,50,45,.1); font-size: 13px; }
+.project-detail-grid li::before { content: "0" counter(steps); margin-right: 15px; color: var(--muted); font-size: 10px; }
+.project-detail-grid .detail-outcome { display: flex; flex-direction: column; justify-content: space-between; }
+.detail-outcome strong { font-family: "Songti SC", STSong, serif; font-size: 22px; font-weight: 400; }
+@keyframes projectReveal { from { opacity: .5; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes detailEnter { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
 
 .skills { display: grid; grid-template-columns: 1fr 1.1fr 1.9fr; gap: 45px; }
 .skills .section-label { display: block; }
@@ -113,8 +135,8 @@ footer h2 { margin: 34px 0 0; font-family: "Songti SC", STSong, serif; font-size
   .about, .work-nav, .skills { grid-template-columns: 1fr; }.about .section-label, .work-nav .section-label, .skills .section-label { display: grid; margin-bottom: 48px; }
   .about-notes, .work-links { grid-template-columns: 1fr; gap: 18px; }.about-notes { margin-top: 48px; }.work-links a { min-height: 290px; }
   .detail-title { grid-template-columns: 1fr; gap: 18px; }.detail-title > p { justify-self: start; }.exp-row { grid-template-columns: 35px 1fr; }.exp-body { grid-column: 2; }
-  .project-list { grid-template-columns: 1fr; }.project-card { min-height: 510px; }
+  .project-list { grid-template-columns: 1fr; }.project-card { min-height: 510px; }.project-expanded { grid-template-columns: 1fr; }.project-card-selected { min-height: 470px; }.project-detail { min-height: auto; padding: 28px 22px; }.project-detail-head { flex-direction: column; }.project-detail-grid { grid-template-columns: 1fr; }.project-detail-grid .process { grid-column: auto; }.project-detail-grid ol { grid-template-columns: 1fr; }
   .skills { gap: 0; }.skills-copy { margin-bottom: 52px; }.skill-grid > div { grid-template-columns: 32px 110px 1fr; }
   footer { min-height: 72vh; grid-template-columns: 1fr; grid-template-rows: 1fr auto auto; gap: 55px; }.footer-note { grid-template-columns: 1fr; gap: 8px; }.footer-note p:nth-child(2) { text-align: left; }.footer-note a { justify-self: start; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }

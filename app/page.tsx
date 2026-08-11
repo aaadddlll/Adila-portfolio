@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ProjectShowcase, type Project } from "./ProjectShowcase";
 
 export const metadata: Metadata = {
   title: "阿迪莱 Adila｜个人网站",
@@ -24,10 +25,10 @@ const experiences = [
   },
 ];
 
-const projects = [
-  { no: "01", title: "让校园信息不再错过", type: "独立产品设计", year: "2025", desc: "从 0 到 1 设计校园活动聚合与提醒工具，解决信息分散、报名遗忘的问题。", result: "访谈 24 人 · 可用性测试完成率 92%" },
-  { no: "02", title: "AI 求职陪练", type: "课程团队项目", year: "2024", desc: "面向应届生的结构化面试练习产品，提供岗位题库、实时追问与复盘建议。", result: "5 人团队 · 4 周完成 MVP" },
-  { no: "03", title: "社区内容增长实验", type: "数据分析项目", year: "2024", desc: "基于行为漏斗定位创作者流失节点，并设计分层激励与回流实验。", result: "提出 3 组实验 · 预估激活提升 15%" },
+const projects: Project[] = [
+  { no: "01", title: "让校园信息不再错过", type: "独立产品设计", year: "2025", desc: "从 0 到 1 设计校园活动聚合与提醒工具，解决信息分散、报名遗忘的问题。", result: "访谈 24 人 · 可用性测试完成率 92%", context: "校园活动信息散落在公众号、群聊与海报中，学生经常在看到信息后忘记报名或错过时间。", challenge: "既要降低信息获取成本，又不能让提醒本身成为新的打扰，同时需要适配校内活动频繁变化的实际情况。", process: ["访谈 24 位学生，梳理信息发现、收藏与报名链路", "归纳三类高频使用情境，搭建活动聚合信息架构", "完成两轮原型测试，优化筛选、收藏和提醒设置", "设计核心界面与可复用组件，整理完整交付说明"], contribution: "独立负责研究计划、需求定义、交互设计、视觉设计与可用性测试，并根据反馈推动两轮方案迭代。" },
+  { no: "02", title: "AI 求职陪练", type: "课程团队项目", year: "2024", desc: "面向应届生的结构化面试练习产品，提供岗位题库、实时追问与复盘建议。", result: "5 人团队 · 4 周完成 MVP", context: "应届生往往缺少低压力、高频次的模拟面试机会，也很难在练习后得到结构化反馈。", challenge: "如何让 AI 追问既贴近真实面试，又避免泛泛而谈，并将反馈转化为下一次练习中可以执行的行动。", process: ["分析 8 款求职与 AI 面试产品，确定差异化机会", "梳理岗位、题目、追问、复盘四段式核心流程", "与团队共同完成提示词测试和高保真原型", "邀请目标用户试用，依据反馈调整复盘信息层级"], contribution: "负责用户调研、核心流程与复盘模块设计，并协调团队在四周内完成可演示 MVP。" },
+  { no: "03", title: "社区内容增长实验", type: "数据分析项目", year: "2024", desc: "基于行为漏斗定位创作者流失节点，并设计分层激励与回流实验。", result: "提出 3 组实验 · 预估激活提升 15%", context: "社区新创作者注册后发布意愿较低，团队需要找出流失节点并验证低成本的激活方式。", challenge: "数据只能描述用户在哪里离开，还需要结合行为与动机解释为什么离开，并让策略具有可测试性。", process: ["拆解注册到首发的行为漏斗，识别三个关键流失点", "结合内容样本与访谈信息形成创作者分层", "针对不同人群设计引导、示例与激励实验", "明确实验指标、样本需求与风险监控方案"], contribution: "负责漏斗分析、用户分层与实验方案设计，将分析结论整理为团队可执行的增长路线图。" },
 ];
 
 export default function Home() {
@@ -90,15 +91,7 @@ export default function Home() {
 
       <section className="detail-section shell" id="projects">
         <div className="detail-title"><span>Selected projects</span><h2>项目经历</h2><p>从真实问题出发，以可验证结果收尾</p></div>
-        <div className="project-list">
-          {projects.map(project => (
-            <article className="project-card" key={project.no}>
-              <div className="project-meta"><span>{project.no}</span><span>{project.type}</span><span>{project.year}</span></div>
-              <div className="project-visual" aria-hidden="true"><span>{project.no}</span><i /></div>
-              <h3>{project.title}</h3><p>{project.desc}</p><div className="project-result"><span>{project.result}</span><b>↗</b></div>
-            </article>
-          ))}
-        </div>
+        <ProjectShowcase projects={projects} />
       </section>
 
       <section className="skills section shell" id="skills">
