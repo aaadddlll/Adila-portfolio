@@ -87,6 +87,9 @@ a { color: inherit; text-decoration: none; }
 .case-head small, .case-block-title small, .case-card small { color: var(--muted); font-size: 9px; letter-spacing: .12em; }
 .case-head h3 { margin: 16px 0 0; font-size: clamp(42px, 5vw, 70px); line-height: 1.08; font-weight: 400; }
 .case-head button { padding: 0; border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 11px; cursor: pointer; }
+.case-close-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.case-close-row span { color: var(--muted); font-size: 9px; letter-spacing: .12em; }
+.case-close-row button { padding: 0; border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 11px; cursor: pointer; }
 .case-summary { display: grid; grid-template-columns: 1.15fr 2fr; gap: 7vw; padding: 42px 0 62px; }
 .case-summary > p { margin: 0; font-size: 16px; line-height: 1.9; }
 .case-summary dl { margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }

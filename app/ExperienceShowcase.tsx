@@ -39,18 +39,18 @@ function MediaCard({ item, platform }: { item: (typeof creatorCases)[number]; pl
 function PepsiCase({ view, onClose }: { view: "videos" | "activation"; onClose: () => void }) {
   return (
     <article className="pepsi-case" aria-live="polite">
-      <header className="case-head">
+      {view === "videos" ? <><header className="case-head">
         <div><small>PEPSICO · QUAKER</small><h3>桂格发酵燕麦<br/>Social Seeding</h3></div>
         <button type="button" onClick={onClose}>返回实习经历 ×</button>
       </header>
       <div className="case-summary">
         <p>围绕发酵燕麦新品的消费者认知增长，我参与达人筛选、Brief 制定、内容审核与投后复盘，并协同推进联名传播及用户体验活动。</p>
         <dl><div><dt>59</dt><dd>合作达人</dd></div><div><dt>1.05 亿+</dt><dd>累计曝光</dd></div><div><dt>105 万+</dt><dd>累计互动</dd></div><div><dt>+40%</dt><dd>核心人群增长</dd></div></dl>
-      </div>
+      </div></> : <div className="case-close-row"><span>PEPSICO · QUAKER</span><button type="button" onClick={onClose}>返回实习经历 ×</button></div>}
 
       {view === "videos" && <section className="case-block"><div className="case-block-title"><span>01</span><div><small>CREATOR SEEDING</small><h4>爆款视频</h4><p>从内容表现、互动质量及看后搜效率复盘投放，筛选具有代表性的高表现内容。</p></div></div><div className="case-grid">{creatorCases.map((item) => <MediaCard key={item.href} item={item} platform="抖音" />)}</div></section>}
-      {view === "activation" && <><section className="case-block"><div className="case-block-title"><span>01</span><div><small>CO-BRANDING</small><h4>桂格 × 奈雪联名</h4><p>通过官方 KV 与垂类创作者内容，连接营养专业、奶茶消费和轻代餐场景。</p></div></div><div className="case-grid">{collaborationCases.map((item) => <MediaCard key={item.href} item={item} platform="小红书" />)}</div></section>
-      <section className="case-block checkin-block"><div className="case-block-title"><span>02</span><div><small>CONSUMER ACTIVATION</small><h4>14 天打卡活动</h4><p>围绕“连续体验 14 天”的产品沟通，让消费者扫码打卡并形成真实使用习惯；完成挑战可获一盒产品，幸运用户可获 52 盒年度装。</p></div></div><div className="checkin-layout"><div className="checkin-images"><img src="/pepsi/checkin-01.png" alt="桂格发酵燕麦14天打卡小程序首页"/><img src="/pepsi/checkin-02.png" alt="桂格发酵燕麦14天打卡活动页面"/></div><div className="checkin-results"><p>小程序暂不支持外部跳转，因此保留真实页面截图作为活动呈现。</p><div><strong>1 万+</strong><span>活动触达人次</span></div><div><strong>23.3%</strong><span>活动复购率</span></div><small>高于行业常见的 5%–15% 区间</small></div></div></section></>}
+      {view === "activation" && <><section className="case-block"><div className="case-block-title"><span>01</span><div><small>CO-BRANDING</small><h4>桂格 × 奈雪联名</h4></div></div><div className="case-grid">{collaborationCases.map((item) => <MediaCard key={item.href} item={item} platform="小红书" />)}</div></section>
+      <section className="case-block checkin-block"><div className="case-block-title"><span>02</span><div><small>CONSUMER ACTIVATION</small><h4>14 天打卡活动</h4><p>围绕“连续体验 14 天”的产品沟通，让消费者扫码打卡并形成真实使用习惯；完成挑战可获一盒产品，幸运用户可获 52 盒年度装。</p></div></div><div className="checkin-layout"><div className="checkin-images"><img src="/pepsi/checkin-01.png" alt="桂格发酵燕麦14天打卡小程序首页"/><img src="/pepsi/checkin-02.png" alt="桂格发酵燕麦14天打卡活动页面"/></div><div className="checkin-results"><div><strong>1 万+</strong><span>活动触达人次</span></div><div><strong>23.3%</strong><span>活动复购率</span></div><small>高于行业常见的 5%–15% 区间</small></div></div></section></>}
     </article>
   );
 }
