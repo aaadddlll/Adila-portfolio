@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import { ProjectShowcase, type Project } from "./ProjectShowcase";
+import { ExperienceShowcase, type Experience } from "./ExperienceShowcase";
 
 export const metadata: Metadata = {
   title: "阿迪莱 Adila｜个人网站",
   description: "阿迪莱 Adila 的个人介绍、实习经历、项目经历与技能。",
 };
 
-const experiences = [
+const experiences: Experience[] = [
   {
     period: "2026.06 — 至今",
     company: "百事中国",
     role: "Marketing Intern · 桂格燕麦 VA 线",
     intro: "负责新品发酵燕麦的种草推广与品牌升级营销，围绕消费者认知增长推进社媒传播、品类策略、Campaign 与 AI 营销探索。",
-    points: ["合作 59 位达人，实现曝光 1.05 亿+、互动 105 万+，核心人群规模增长 40%", "参与桂格 × 奈雪的茶联名 Social Seeding 与发酵燕麦 14 天打卡活动，触达 1 万+ 人次", "开展燕麦竞品、产品矩阵与包装趋势研究，跟进 slogan、包装等消费者测试", "参与 GEO 项目，优化豆包、DeepSeek 等 AI 平台内容素材与搜索场景匹配"],
+    points: [{ text: "合作 59 位达人，实现曝光 1.05 亿+、互动 105 万+，核心人群规模增长 40%", detail: true }, { text: "参与桂格 × 奈雪的茶联名 Social Seeding 与发酵燕麦 14 天打卡活动，触达 1 万+ 人次" }, { text: "开展燕麦竞品、产品矩阵与包装趋势研究，跟进 slogan、包装等消费者测试" }, { text: "参与 GEO 项目，优化豆包、DeepSeek 等 AI 平台内容素材与搜索场景匹配" }],
     tags: ["社媒营销", "消费者洞察", "Campaign", "AI 营销"],
   },
   {
@@ -20,7 +21,7 @@ const experiences = [
     company: "玛氏中国",
     role: "Marketing Intern · 皇家宠物食品 Pro 业务线",
     intro: "面向 B 端繁育客户开展客户教育与赋能，同时连接繁育客户与 C 端消费者，负责内容增长、活动执行、生态运营及行业研究。",
-    points: ["从 0 到 1 搭建近两年内容数据库，小红书粉丝由 6000 增至 1.3 万，互动率提升 200%", "参与上海它博会 Campaign，新增注册用户 1000+、品牌账号新增粉丝 4000+", "围绕一线城市年轻女性养宠群体，从粉丝画像、互动表现、历史作品、CPM/CPE 及预估效果评估宠物垂类达人；2 位合作达人内容达到平台“质爆”标准", "优化繁育课程并举办它博会论坛，论坛满意度达到 98%", "联动 20 家核心繁育客户共创短视频，合作内容曝光及互动提升 200%-400%"],
+    points: ["从 0 到 1 搭建近两年内容数据库，小红书粉丝由 6000 增至 1.3 万，互动率提升 200%", "参与上海它博会 Campaign，新增注册用户 1000+、品牌账号新增粉丝 4000+", "围绕一线城市年轻女性养宠群体，从粉丝画像、互动表现、历史作品、CPM/CPE 及预估效果评估宠物垂类达人；2 位合作达人内容达到平台“质爆”标准", "优化繁育课程并举办它博会论坛，论坛满意度达到 98%", "联动 20 家核心繁育客户共创短视频，合作内容曝光及互动提升 200%-400%"].map(text => ({ text })),
     tags: ["内容增长", "达人投放", "Campaign", "客户运营", "市场研究"],
   },
   {
@@ -28,7 +29,7 @@ const experiences = [
     company: "国融乐养健康科技公司",
     role: "项目运营实习生",
     intro: "面向上海社区老年群体开展需求研究与项目运营，围绕 AI 工具、短视频创作和直播学习等数字化内容，推动课程策划、用户运营与活动落地。",
-    points: ["通过访谈、活动反馈与线上社群观察识别老年群体数字化学习需求，支持课程体系优化", "策划并落地 AI 学习、短视频制作及直播教学等 10 余场活动，覆盖 500 余名用户，满意度达 95%", "对接讲师、场地及内部运营团队，协调排期、资源和执行需求，持续优化项目流程", "收集满意度问卷 400+ 份，复盘参与数据、预算与执行效果，输出项目总结报告"],
+    points: ["通过访谈、活动反馈与线上社群观察识别老年群体数字化学习需求，支持课程体系优化", "策划并落地 AI 学习、短视频制作及直播教学等 10 余场活动，覆盖 500 余名用户，满意度达 95%", "对接讲师、场地及内部运营团队，协调排期、资源和执行需求，持续优化项目流程", "收集满意度问卷 400+ 份，复盘参与数据、预算与执行效果，输出项目总结报告"].map(text => ({ text })),
     tags: ["需求洞察", "项目运营", "用户运营", "数据复盘"],
   },
 ];
@@ -86,15 +87,7 @@ export default function Home() {
 
       <section className="detail-section shell" id="experience">
         <div className="detail-title"><span>Experience</span><h2>实习经历</h2><p>百事中国 · 玛氏中国 · 国融乐养</p></div>
-        <div className="experience-list">
-          {experiences.map((item, idx) => (
-            <article className="exp-row" key={item.period}>
-              <span className="row-no">0{idx + 1}</span>
-              <div className="exp-meta"><p>{item.period}</p><h3>{item.company}</h3><span>{item.role}</span></div>
-              <div className="exp-body"><p>{item.intro}</p><ul>{item.points.map(point => <li key={point}>{point}</li>)}</ul><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
-            </article>
-          ))}
-        </div>
+        <ExperienceShowcase experiences={experiences} />
       </section>
 
       <section className="detail-section shell" id="projects">
