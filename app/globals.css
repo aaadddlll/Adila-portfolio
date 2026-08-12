@@ -81,6 +81,7 @@ a { color: inherit; text-decoration: none; }
 .tags { display: flex; flex-wrap: wrap; gap: 7px; }
 .tags span { padding: 5px 11px; border: 1px solid var(--line); border-radius: 20px; font-size: 10px; color: var(--muted); }
 
+.experience-case-anchor { scroll-margin-top: 92px; }
 .pepsi-case { margin: 26px 0 70px; padding: 48px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); animation: projectReveal .48s ease both; }
 .case-head { display: flex; justify-content: space-between; gap: 30px; align-items: flex-start; padding-bottom: 38px; border-bottom: 1px solid var(--line); }
 .case-head small, .case-block-title small, .case-card small { color: var(--muted); font-size: 9px; letter-spacing: .12em; }

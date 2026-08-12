@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export type Experience = {
   period: string;
   company: string;
   role: string;
   intro: string;
-  points: { text: string; detail?: boolean }[];
+  points: { text: string; detail?: "videos" | "activation" }[];
   tags: string[];
 };
 
@@ -36,7 +36,7 @@ function MediaCard({ item, platform }: { item: (typeof creatorCases)[number]; pl
   );
 }
 
-function PepsiCase({ onClose }: { onClose: () => void }) {
+function PepsiCase({ view, onClose }: { view: "videos" | "activation"; onClose: () => void }) {
   return (
     <article className="pepsi-case" aria-live="polite">
       <header className="case-head">
@@ -48,23 +48,27 @@ function PepsiCase({ onClose }: { onClose: () => void }) {
         <dl><div><dt>59</dt><dd>合作达人</dd></div><div><dt>1.05 亿+</dt><dd>累计曝光</dd></div><div><dt>105 万+</dt><dd>累计互动</dd></div><div><dt>+40%</dt><dd>核心人群增长</dd></div></dl>
       </div>
 
-      <section className="case-block"><div className="case-block-title"><span>01</span><div><small>CREATOR SEEDING</small><h4>爆款视频</h4><p>从内容表现、互动质量及看后搜效率复盘投放，筛选具有代表性的高表现内容。</p></div></div><div className="case-grid">{creatorCases.map((item) => <MediaCard key={item.href} item={item} platform="抖音" />)}</div></section>
-      <section className="case-block"><div className="case-block-title"><span>02</span><div><small>CO-BRANDING</small><h4>桂格 × 奈雪联名</h4><p>通过官方 KV 与垂类创作者内容，连接营养专业、奶茶消费和轻代餐场景。</p></div></div><div className="case-grid">{collaborationCases.map((item) => <MediaCard key={item.href} item={item} platform="小红书" />)}</div></section>
-      <section className="case-block checkin-block"><div className="case-block-title"><span>03</span><div><small>CONSUMER ACTIVATION</small><h4>14 天打卡活动</h4><p>围绕“连续体验 14 天”的产品沟通，让消费者扫码打卡并形成真实使用习惯；完成挑战可获一盒产品，幸运用户可获 52 盒年度装。</p></div></div><div className="checkin-layout"><div className="checkin-images"><img src="/pepsi/checkin-01.png" alt="桂格发酵燕麦14天打卡小程序首页"/><img src="/pepsi/checkin-02.png" alt="桂格发酵燕麦14天打卡活动页面"/></div><div className="checkin-results"><p>小程序暂不支持外部跳转，因此保留真实页面截图作为活动呈现。</p><div><strong>1 万+</strong><span>活动触达人次</span></div><div><strong>23.3%</strong><span>活动复购率</span></div><small>高于行业常见的 5%–15% 区间</small></div></div></section>
+      {view === "videos" && <section className="case-block"><div className="case-block-title"><span>01</span><div><small>CREATOR SEEDING</small><h4>爆款视频</h4><p>从内容表现、互动质量及看后搜效率复盘投放，筛选具有代表性的高表现内容。</p></div></div><div className="case-grid">{creatorCases.map((item) => <MediaCard key={item.href} item={item} platform="抖音" />)}</div></section>}
+      {view === "activation" && <><section className="case-block"><div className="case-block-title"><span>01</span><div><small>CO-BRANDING</small><h4>桂格 × 奈雪联名</h4><p>通过官方 KV 与垂类创作者内容，连接营养专业、奶茶消费和轻代餐场景。</p></div></div><div className="case-grid">{collaborationCases.map((item) => <MediaCard key={item.href} item={item} platform="小红书" />)}</div></section>
+      <section className="case-block checkin-block"><div className="case-block-title"><span>02</span><div><small>CONSUMER ACTIVATION</small><h4>14 天打卡活动</h4><p>围绕“连续体验 14 天”的产品沟通，让消费者扫码打卡并形成真实使用习惯；完成挑战可获一盒产品，幸运用户可获 52 盒年度装。</p></div></div><div className="checkin-layout"><div className="checkin-images"><img src="/pepsi/checkin-01.png" alt="桂格发酵燕麦14天打卡小程序首页"/><img src="/pepsi/checkin-02.png" alt="桂格发酵燕麦14天打卡活动页面"/></div><div className="checkin-results"><p>小程序暂不支持外部跳转，因此保留真实页面截图作为活动呈现。</p><div><strong>1 万+</strong><span>活动触达人次</span></div><div><strong>23.3%</strong><span>活动复购率</span></div><small>高于行业常见的 5%–15% 区间</small></div></div></section></>}
     </article>
   );
 }
 
 export function ExperienceShowcase({ experiences }: { experiences: Experience[] }) {
-  const [showPepsi, setShowPepsi] = useState(false);
+  const [showPepsi, setShowPepsi] = useState<"videos" | "activation" | null>(null);
+  const detailRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (showPepsi) requestAnimationFrame(() => detailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
+  }, [showPepsi]);
   return <div className="experience-list">
     {experiences.map((item, idx) => (
       <article className="exp-row" key={item.period}>
         <span className="row-no">0{idx + 1}</span>
         <div className="exp-meta"><p>{item.period}</p><h3>{item.company}</h3><span>{item.role}</span></div>
-        <div className="exp-body"><p>{item.intro}</p><ul>{item.points.map((point) => <li key={point.text}>{point.detail ? <button type="button" onClick={() => setShowPepsi(true)}>{point.text}<span>查看案例详情 ↗</span></button> : point.text}</li>)}</ul><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
+        <div className="exp-body"><p>{item.intro}</p><ul>{item.points.map((point) => <li key={point.text}>{point.detail ? <button type="button" onClick={() => setShowPepsi(point.detail!)}>{point.text}<span>查看案例详情 ↗</span></button> : point.text}</li>)}</ul><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
       </article>
     ))}
-    {showPepsi && <PepsiCase onClose={() => setShowPepsi(false)} />}
+    {showPepsi && <div ref={detailRef} className="experience-case-anchor"><PepsiCase view={showPepsi} onClose={() => setShowPepsi(null)} /></div>}
   </div>;
 }

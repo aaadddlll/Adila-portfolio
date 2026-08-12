@@ -13,7 +13,7 @@ const experiences: Experience[] = [
     company: "百事中国",
     role: "Marketing Intern · 桂格燕麦 VA 线",
     intro: "负责新品发酵燕麦的种草推广与品牌升级营销，围绕消费者认知增长推进社媒传播、品类策略、Campaign 与 AI 营销探索。",
-    points: [{ text: "合作 59 位达人，实现曝光 1.05 亿+、互动 105 万+，核心人群规模增长 40%", detail: true }, { text: "参与桂格 × 奈雪的茶联名 Social Seeding 与发酵燕麦 14 天打卡活动，触达 1 万+ 人次" }, { text: "开展燕麦竞品、产品矩阵与包装趋势研究，跟进 slogan、包装等消费者测试" }, { text: "参与 GEO 项目，优化豆包、DeepSeek 等 AI 平台内容素材与搜索场景匹配" }],
+    points: [{ text: "合作 59 位达人，实现曝光 1.05 亿+、互动 105 万+，核心人群规模增长 40%", detail: "videos" }, { text: "参与桂格 × 奈雪的茶联名 Social Seeding 与发酵燕麦 14 天打卡活动，触达 1 万+ 人次", detail: "activation" }, { text: "开展燕麦竞品、产品矩阵与包装趋势研究，跟进 slogan、包装等消费者测试" }, { text: "参与 GEO 项目，优化豆包、DeepSeek 等 AI 平台内容素材与搜索场景匹配" }],
     tags: ["社媒营销", "消费者洞察", "Campaign", "AI 营销"],
   },
   {
