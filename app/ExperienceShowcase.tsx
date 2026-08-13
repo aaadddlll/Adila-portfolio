@@ -41,8 +41,8 @@ const marsSocial = [
   { image: "/mars/social-02.jpg", href: "https://v.douyin.com/r_Vu-M2I324/", metric: "播放 7 万+", note: "用“狗界体育生学霸”的内容钩子讲专业繁育，带动多名消费者私信咨询。", mask: "mask-douyin" },
 ];
 const marsKol = [
-  { image: "/mars/kol-01.png", href: "https://v.douyin.com/8BUC-Rg9tlw/", metric: "平台“质爆”", note: "它博会探展内容发布三天后，抖音种草 A3 新增率进入行业前 50%。", mask: "mask-douyin" },
-  { image: "/mars/kol-02.png", href: "https://v.douyin.com/ar4NuU8fcRY/", metric: "平台“质爆”", note: "从消费者选购猫犬的真实问题切入，种草 A3 新增率进入行业前 50%。", mask: "mask-douyin" },
+  { image: "/mars/kol-01.png", href: "https://v.douyin.com/8BUC-Rg9tlw/", metric: "质爆案例 01", note: "", mask: "mask-douyin" },
+  { image: "/mars/kol-02.png", href: "https://v.douyin.com/ar4NuU8fcRY/", metric: "质爆案例 02", note: "", mask: "mask-douyin" },
 ];
 
 function MarsCase({ view, onClose }: { view: "mars-social" | "mars-event" | "mars-customer" | "mars-kol"; onClose: () => void }) {
@@ -61,7 +61,6 @@ function MarsCase({ view, onClose }: { view: "mars-social" | "mars-event" | "mar
         {eventSection === "booth" && <section><div className="case-block-title"><span>03</span><div><small>EXHIBITION</small><h4>皇家展位与活体区</h4><p>协同销售、繁育客户、主办方与供应商推进现场落地；活体区 53 家商家中 50 家成交，成交率约 94%，成交犬猫 121 只、金额 130 万+。</p></div></div><div className="event-photo-grid">{[1,2,3,4,5].map(n=><img key={n} src={`/mars/booth-0${n}.jpg`} alt="皇家它博会展位现场"/>)}</div><dl className="event-metrics"><div><dt>94%</dt><dd>入驻商家成交率</dd></div><div><dt>121</dt><dd>成交犬猫数量</dd></div><div><dt>130 万+</dt><dd>成交金额</dd></div><div><dt>4000+</dt><dd>线上直播观看</dd></div></dl></section>}
         {eventSection === "social" && <section><div className="case-block-title"><span>04</span><div><small>SOCIAL ACTIVATION</small><h4>粉丝互动与视频测试</h4><p>展前赠票连接 20 名粉丝；展中以消费者兴趣设计互动小游戏，推动账号在四天内快速涨粉 4000+。</p></div></div><div className="case-grid case-grid-two"><MediaCard item={{image:"/mars/event-post.jpg",href:"http://xhslink.cn/o/1VsHKDxiOYv",metric:"20 张赠票",note:"从线上福利到线下见面，让粉丝真实参与品牌活动并出镜账号内容。",mask:"mask-xhs-top"}} platform="小红书"/><MediaCard item={{image:"/mars/event-video.jpg",href:"http://xhslink.cn/o/2gxWPmsF4yR",metric:"同期最高互动",note:"基于内容数据库与热门趋势设计 C 端互动测试，验证账号面向消费者的内容潜力。",mask:"mask-xhs-top"}} platform="小红书"/></div></section>}
       </div>
-      <section className="event-overview"><small>ABOUT 2026 TOPS</small><h4>一场汇聚数十万人次的<br/>宠物行业年度盛会</h4><p>2026 上海 TOPS 它博会汇聚 1,200+ 家展商，吸引 80,000+ 名专业观众与 200,000+ 名消费者到场。面对高密度客流与多元行业参与者，我参与策划执行皇家高峰论坛、客户晚宴、展位活动、现场支持及社媒传播，将大型线下展会转化为客户赋能、品牌触达与用户增长的综合场景。</p><dl><div><dt>1,200+</dt><dd>参展品牌与商家</dd></div><div><dt>80,000+</dt><dd>专业观众</dd></div><div><dt>200,000+</dt><dd>消费者</dd></div></dl></section>
     </>}
     {view === "mars-customer" && <>
       <section className="case-block"><div className="case-block-title"><span>01</span><div><small>PROFESSIONAL EDUCATION</small><h4>皇家繁育学园</h4><p>通过专业课程、书籍、公开课与直播课持续赋能 B 端繁育客户；负责对接讲师、审核并发布课程，以及用问卷沉淀反馈。</p></div></div><div className="academy-layout"><img src="/mars/academy.jpg" alt="皇家繁育学园小程序页面"/><div><strong>持续的客户教育平台</strong><p>除线上课程外，也组织繁育人自媒体、直播等实操课程，帮助客户提升经营和内容能力。</p></div></div></section>
