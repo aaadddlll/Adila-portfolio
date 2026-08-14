@@ -14,7 +14,7 @@ export type Experience = {
 const creatorCases = [
   { image: "/pepsi/douyin-01.png", href: "https://v.douyin.com/hn49QEzu_iI/", metric: "看后搜 7 万+", note: "以一线城市女性生活方式切入，把产品自然放进真实日常；看后搜成本仅 1.64。", mask: "mask-douyin" },
   { image: "/pepsi/douyin-02.png", href: "https://v.douyin.com/FudKLVkeTJM/", metric: "高曝光 · 高互动", note: "内容有效触达“精致妈妈”核心人群，看后搜成本仅 2.03。", mask: "mask-douyin" },
-  { image: "/pepsi/douyin-03.png", href: "https://v.douyin.com/8J2g673w8SY/", metric: "2.4 万赞", note: "抓住“杯子 + 隔夜燕麦杯”兴趣点，用高颜值试吃内容同时带动产品搜索与转化。", mask: "mask-douyin" },
+  { image: "/pepsi/douyin-03-new.png", href: "https://v.douyin.com/8J2g673w8SY/", metric: "2.4 万赞", note: "以短平快的全视频广告测试快速验证投放效果，抓住“杯子 + 隔夜燕麦杯”的视觉兴趣点，高效完成产品种草。", mask: "mask-douyin", objectPosition: "center 78%" },
 ];
 
 const collaborationCases = [
@@ -27,7 +27,7 @@ function MediaCard({ item, platform }: { item: (typeof creatorCases)[number]; pl
   return (
     <a className="case-card" href={item.href} target="_blank" rel="noreferrer" aria-label={`${platform}：${item.metric}，点击查看原内容`}>
       <div className="case-image">
-        <img src={item.image} alt="已隐藏创作者昵称的内容表现截图" />
+        <img src={item.image} alt="已隐藏创作者昵称的内容表现截图" style={{ objectPosition: item.objectPosition ?? "center 18%" }} />
         {item.mask && <i className={item.mask} aria-hidden="true" />}
         <span>查看原内容 ↗</span>
       </div>
@@ -103,7 +103,7 @@ export function ExperienceShowcase({ experiences }: { experiences: Experience[] 
     if (showPepsi) requestAnimationFrame(() => detailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }, [showPepsi]);
   const selected = selectedCompany === null ? null : experiences[selectedCompany];
-  if (!selected) return <div className="experience-company-list">{experiences.map((item, idx) => <button className="experience-company-card" type="button" key={item.company} onClick={() => setSelectedCompany(idx)} aria-label={`展开 ${item.company} 实习经历`}><div className="project-meta"><span>0{idx + 1}</span><span>{item.period}</span><span>WORK</span></div><div className="project-visual" aria-hidden="true"><span>0{idx + 1}</span><i/></div><h3>{item.company}</h3><p>{item.role}</p><div className="project-result"><span>{item.tags.slice(0, 2).join(" · ")}</span><b>↗</b></div></button>)}</div>;
+  if (!selected) return <div className="experience-company-list">{experiences.map((item, idx) => <button className="experience-company-card" type="button" key={item.company} onClick={() => setSelectedCompany(idx)} aria-label={`展开 ${item.company} 实习经历`}><div className="project-meta"><span>0{idx + 1}</span><span>{item.period}</span><span>WORK</span></div><div className="project-visual" aria-hidden="true"><span>0{idx + 1}</span><i/></div><h3>{item.company}</h3><p>{item.role}</p><div className="project-result"><span>{item.tags.slice(0, idx === 1 ? 3 : 2).join(" · ")}</span><b>↗</b></div></button>)}</div>;
 
   return <div className="experience-selected" ref={companyDetailRef}>
     <button className="experience-company-card experience-company-card-selected" type="button" onClick={() => { setSelectedCompany(null); setShowPepsi(null); }} aria-label={`返回全部实习经历`}><div className="project-meta"><span>0{selectedCompany! + 1}</span><span>{selected.period}</span><span>WORK</span></div><div className="project-visual" aria-hidden="true"><span>0{selectedCompany! + 1}</span><i/></div><h3>{selected.company}</h3><p>{selected.role}</p><div className="project-result"><span>返回全部公司</span><b>←</b></div></button>
