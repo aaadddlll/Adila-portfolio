@@ -91,26 +91,23 @@ function PepsiCase({ view, onClose }: { view: "videos" | "activation"; onClose: 
 }
 
 export function ExperienceShowcase({ experiences }: { experiences: Experience[] }) {
+  const [selectedCompany, setSelectedCompany] = useState<number | null>(null);
   const [showPepsi, setShowPepsi] = useState<Experience["points"][number]["detail"] | null>(null);
   const detailRef = useRef<HTMLDivElement>(null);
-  const pepsiRef = useRef<HTMLElement>(null);
-  const marsRef = useRef<HTMLElement>(null);
+  const companyDetailRef = useRef<HTMLDivElement>(null);
   const closePepsi = () => {
     setShowPepsi(null);
-    const target = showPepsi?.startsWith("mars-") ? marsRef.current : pepsiRef.current;
-    requestAnimationFrame(() => target?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    requestAnimationFrame(() => companyDetailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
   };
   useEffect(() => {
     if (showPepsi) requestAnimationFrame(() => detailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }, [showPepsi]);
-  return <div className="experience-list">
-    {experiences.map((item, idx) => (
-      <article className="exp-row" key={item.period} ref={idx === 0 ? pepsiRef : idx === 1 ? marsRef : undefined}>
-        <span className="row-no">0{idx + 1}</span>
-        <div className="exp-meta"><p>{item.period}</p><h3>{item.company}</h3><span>{item.role}</span></div>
-        <div className="exp-body"><p>{item.intro}</p><ul>{item.points.map((point) => <li key={point.text}>{point.detail ? <button type="button" onClick={() => setShowPepsi(point.detail!)}>{point.text}<span>查看案例详情 ↗</span></button> : point.text}</li>)}</ul><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
-      </article>
-    ))}
-    {showPepsi && <div ref={detailRef} className="experience-case-anchor">{showPepsi.startsWith("mars-") ? <MarsCase view={showPepsi as "mars-social" | "mars-event" | "mars-customer" | "mars-kol"} onClose={closePepsi}/> : <PepsiCase view={showPepsi as "videos" | "activation"} onClose={closePepsi} />}</div>}
+  const selected = selectedCompany === null ? null : experiences[selectedCompany];
+  if (!selected) return <div className="experience-company-list">{experiences.map((item, idx) => <button className="experience-company-card" type="button" key={item.company} onClick={() => setSelectedCompany(idx)} aria-label={`展开 ${item.company} 实习经历`}><div className="project-meta"><span>0{idx + 1}</span><span>{item.period}</span><span>WORK</span></div><div className="project-visual" aria-hidden="true"><span>0{idx + 1}</span><i/></div><h3>{item.company}</h3><p>{item.role}</p><div className="project-result"><span>{item.tags.slice(0, 2).join(" · ")}</span><b>↗</b></div></button>)}</div>;
+
+  return <div className="experience-selected" ref={companyDetailRef}>
+    <button className="experience-company-card experience-company-card-selected" type="button" onClick={() => { setSelectedCompany(null); setShowPepsi(null); }} aria-label={`返回全部实习经历`}><div className="project-meta"><span>0{selectedCompany! + 1}</span><span>{selected.period}</span><span>WORK</span></div><div className="project-visual" aria-hidden="true"><span>0{selectedCompany! + 1}</span><i/></div><h3>{selected.company}</h3><p>{selected.role}</p><div className="project-result"><span>返回全部公司</span><b>←</b></div></button>
+    <article className="experience-company-detail"><div className="project-detail-head"><div><small>EXPERIENCE 0{selectedCompany! + 1}</small><h3>{selected.company}</h3><p>{selected.role} · {selected.period}</p></div><button type="button" onClick={() => { setSelectedCompany(null); setShowPepsi(null); }}>返回全部实习 ×</button></div><div className="exp-body company-exp-body"><p>{selected.intro}</p><ul>{selected.points.map(point => <li key={point.text}>{point.detail ? <button type="button" onClick={() => setShowPepsi(point.detail!)}>{point.text}<span>查看案例详情 ↗</span></button> : point.text}</li>)}</ul><div className="tags">{selected.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div></article>
+    {showPepsi && <div ref={detailRef} className="experience-case-anchor company-case-detail">{showPepsi.startsWith("mars-") ? <MarsCase view={showPepsi as "mars-social" | "mars-event" | "mars-customer" | "mars-kol"} onClose={closePepsi}/> : <PepsiCase view={showPepsi as "videos" | "activation"} onClose={closePepsi}/>}</div>}
   </div>;
 }
