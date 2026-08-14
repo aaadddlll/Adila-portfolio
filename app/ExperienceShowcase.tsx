@@ -7,7 +7,7 @@ export type Experience = {
   company: string;
   role: string;
   intro: string;
-  points: { text: string; detail?: "videos" | "activation" | "mars-social" | "mars-event" | "mars-customer" | "mars-kol" }[];
+  points: { text: string; detail?: "videos" | "activation" | "mars-social" | "mars-event" | "mars-customer" | "mars-kol" | "senior-film" }[];
   tags: string[];
 };
 
@@ -90,6 +90,10 @@ function PepsiCase({ view, onClose }: { view: "videos" | "activation"; onClose: 
   );
 }
 
+function SeniorFilmCase({ onClose }: { onClose: () => void }) {
+  return <article className="pepsi-case senior-film-case" aria-live="polite"><header className="case-head"><div><small>COMMUNITY PROGRAM · SILVER GENERATION</small><h3>老年剧组<br/>短视频共创计划</h3></div><button type="button" onClick={onClose}>返回实习经历 ×</button></header><div className="case-summary"><p>从老年群体日常刷短视频、追短剧，以及希望与时代保持连接的真实需求出发，组建“老年剧组”，把数字技能学习转化为一场可参与、可产出的内容共创项目。</p><dl><div><dt>10+</dt><dd>系列活动</dd></div><div><dt>500+</dt><dd>覆盖用户</dd></div><div><dt>95%</dt><dd>活动满意度</dd></div></dl></div><section className="case-block senior-story"><div className="case-block-title"><span>01</span><div><small>FROM INSIGHT TO CREATION</small><h4>让老年人从观看者<br/>成为创作者</h4><p>课程从拍摄、录音、表演到短视频制作逐步拆解，让参与者在真实场景中学习镜头表达和内容创作，并共同完成短视频作品。项目获得长宁区奖项、登上长宁区报纸，并获央视财经频道报道。</p></div></div><a className="senior-report" href="https://weixin.qq.com/sph/Agn62r5Kwr" target="_blank" rel="noreferrer"><img src="/senior-film-cctv.jpg" alt="央视财经频道报道老年剧组短视频课程"/><div><small>CCTV-2 · 经济半小时</small><strong>点击观看央视报道</strong><span>查看视频 ↗</span></div></a></section><div className="case-bottom-return"><button type="button" onClick={onClose}>返回 ↑</button></div></article>;
+}
+
 export function ExperienceShowcase({ experiences }: { experiences: Experience[] }) {
   const [selectedCompany, setSelectedCompany] = useState<number | null>(null);
   const [showPepsi, setShowPepsi] = useState<Experience["points"][number]["detail"] | null>(null);
@@ -108,6 +112,6 @@ export function ExperienceShowcase({ experiences }: { experiences: Experience[] 
   return <div className="experience-selected" ref={companyDetailRef}>
     <button className="experience-company-card experience-company-card-selected" type="button" onClick={() => { setSelectedCompany(null); setShowPepsi(null); }} aria-label={`返回全部实习经历`}><div className="project-meta"><span>0{selectedCompany! + 1}</span><span>{selected.period}</span><span>WORK</span></div><div className="project-visual" aria-hidden="true"><span>0{selectedCompany! + 1}</span><i/></div><h3>{selected.company}</h3><p>{selected.role}</p><div className="project-result"><span>返回全部公司</span><b>←</b></div></button>
     <article className="experience-company-detail"><div className="project-detail-head"><div><small>EXPERIENCE 0{selectedCompany! + 1}</small><h3>{selected.company}</h3><p>{selected.role} · {selected.period}</p></div><button type="button" onClick={() => { setSelectedCompany(null); setShowPepsi(null); }}>返回全部实习 ×</button></div><div className="exp-body company-exp-body"><p>{selected.intro}</p><ul>{selected.points.map(point => <li key={point.text}>{point.detail ? <button type="button" onClick={() => setShowPepsi(point.detail!)}>{point.text}<span>查看案例详情 ↗</span></button> : point.text}</li>)}</ul><div className="tags">{selected.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div></article>
-    {showPepsi && <div ref={detailRef} className="experience-case-anchor company-case-detail">{showPepsi.startsWith("mars-") ? <MarsCase view={showPepsi as "mars-social" | "mars-event" | "mars-customer" | "mars-kol"} onClose={closePepsi}/> : <PepsiCase view={showPepsi as "videos" | "activation"} onClose={closePepsi}/>}</div>}
+    {showPepsi && <div ref={detailRef} className="experience-case-anchor company-case-detail">{showPepsi === "senior-film" ? <SeniorFilmCase onClose={closePepsi}/> : showPepsi.startsWith("mars-") ? <MarsCase view={showPepsi as "mars-social" | "mars-event" | "mars-customer" | "mars-kol"} onClose={closePepsi}/> : <PepsiCase view={showPepsi as "videos" | "activation"} onClose={closePepsi}/>}</div>}
   </div>;
 }
