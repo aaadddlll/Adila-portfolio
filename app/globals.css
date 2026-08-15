@@ -168,6 +168,7 @@ a { color: inherit; text-decoration: none; }
 .academy-gallery img { width: 100%; height: 470px; display: block; object-fit: contain; object-position: top; border-radius: 10px; background: #f3f4f1; }
 .academy-gallery figcaption { padding: 12px 3px 4px; color: var(--muted); font-size: 11px; }
 .academy-intro { max-width: 760px; padding-top: 38px; }.academy-intro strong { font-size: 34px; font-weight: 400; }.academy-intro p { margin: 10px 0 0; color: #46524b; font-size: 16px; line-height: 2; }
+.academy-ops { margin: 28px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }.academy-ops li { display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--line); }.academy-ops li > span { color: var(--muted); font-size: 10px; }.academy-ops b { font-size: 13px; font-weight: 500; }.academy-ops li p { margin-top: 5px; font-size: 13px; line-height: 1.8; }
 .compact-media-section { justify-content: center; max-width: 700px; margin-inline: auto; }
 .compact-media-section .case-card { max-width: 310px; margin-inline: auto; }
 .compact-media-section .case-image { height: 360px; }
