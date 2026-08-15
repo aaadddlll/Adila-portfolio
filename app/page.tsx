@@ -25,7 +25,7 @@ const experiences: Experience[] = [
     image: "/experience-mars.jpg",
     imagePosition: "center",
     intro: "面向 B 端繁育客户开展客户教育与赋能，同时连接繁育客户与 C 端消费者，负责内容增长、活动执行、生态运营及行业研究。",
-    points: [{ text: "社媒内容增长：从 0 到 1 搭建账号近两年数据库，数据复盘输出优化意见；运营期间小红书粉丝由 6000 增至 1.3 万，平均互动率提升 30%", detail: "mars-social" }, { text: "深度参与大型活动——2026 上海它博会，推进论坛、晚宴、展位、现场活动与内容传播", detail: "mars-event" }, { text: "客户运营与赋能：通过专业课程与内容共创服务繁育客户", detail: "mars-customer" }, { text: "KOL 运营：评估宠物垂类达人，2 位合作达人内容达到平台“质爆”标准", detail: "mars-kol" }],
+    points: [{ text: "社媒内容增长：从 0 到 1 搭建账号近两年数据库，数据复盘输出优化意见；运营期间小红书粉丝由 6000 增至 1.3 万，平均互动率提升 30%", detail: "mars-social" }, { text: "深度参与大型活动——2026 上海它博会，推进论坛、晚宴、展位、现场活动与内容传播", detail: "mars-event" }, { text: "客户运营与赋能：协助运营面向 B 端客户的皇家繁育学园小程序，推进课程、专业书籍与功能上线，并梳理 User Journey", detail: "mars-customer" }, { text: "KOL 运营：评估宠物垂类达人，2 位合作达人内容达到平台“质爆”标准", detail: "mars-kol" }],
     tags: ["内容增长", "客户运营", "项目运营", "达人投放", "市场研究"],
   },
   {
@@ -103,10 +103,12 @@ export default function Home() {
         <div className="section-label"><span>03</span><p>Skills</p></div>
         <div className="skills-copy"><h2>我的能力组合</h2><p>从消费者洞察出发，用内容和项目连接品牌、合作伙伴与真实用户。</p></div>
         <div className="skill-grid">
-          <div><span>01</span><h3>消费者洞察</h3><p>深度访谈 · 问卷调查 · 社媒观察 · 竞品研究 · 市场机会分析</p></div>
-          <div><span>02</span><h3>品牌与营销</h3><p>内容策划 · KOL/KOC 合作 · Campaign 执行 · 小红书 · 抖音</p></div>
-          <div><span>03</span><h3>分析与协作</h3><p>NVivo · SPSS · Excel · 数据复盘 · 项目管理 · 跨部门协作</p></div>
-          <div><span>04</span><h3>AI 工作流</h3><p>数据分析思路 · 视频创意辅助 · 标准化任务提效 · Vibe Coding · 个人网站搭建</p></div>
+          <div><span>01</span><h3>消费者洞察与行业研究</h3><p>深度访谈 · 问卷调查 · 社媒观察 · 竞品研究 · 市场趋势与机会分析</p></div>
+          <div><span>02</span><h3>整合营销</h3><p>Campaign 策划执行 · KOL/KOC 合作 · Social Seeding · 线上线下联动 · 投后复盘</p></div>
+          <div><span>03</span><h3>用户运营</h3><p>B 端客户运营 · 用户旅程 · 客户教育与赋能 · 社群维护 · 用户反馈 · 服务转化</p></div>
+          <div><span>04</span><h3>数据分析</h3><p>Excel · SPSS · NVivo · 数据清洗 · 数据透视表 · 定量与定性分析 · 可视化复盘</p></div>
+          <div><span>05</span><h3>内容与文案</h3><p>公众号运营 · 活动传播 · 视频脚本 · 项目报告 · 内容策划 · 多平台文案</p></div>
+          <div><span>06</span><h3>AI 工作流</h3><p>数据分析思路 · 视频创意辅助 · 标准化任务提效 · Vibe Coding · 个人网站搭建</p></div>
         </div>
       </section>
 
