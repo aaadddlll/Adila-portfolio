@@ -25,7 +25,7 @@ const experiences: Experience[] = [
     image: "/experience-mars.jpg",
     imagePosition: "center",
     intro: "面向 B 端繁育客户开展客户教育与赋能，同时连接繁育客户与 C 端消费者，负责内容增长、活动执行、生态运营及行业研究。",
-    points: [{ text: "社媒内容增长：从 0 到 1 搭建账号近两年数据库，数据复盘输出优化意见；运营期间小红书粉丝由 6000 增至 1.3 万，平均互动率提升 30%", detail: "mars-social" }, { text: "深度参与大型活动——2026 上海它博会，推进论坛、晚宴、展位、现场活动与内容传播", detail: "mars-event" }, { text: "客户运营与赋能：协助运营面向 B 端客户的皇家繁育学园小程序，推进课程、专业书籍与功能上线，并梳理 User Journey", detail: "mars-customer" }, { text: "KOL 运营：评估宠物垂类达人，2 位合作达人内容达到平台“质爆”标准", detail: "mars-kol" }],
+    points: [{ text: "社媒内容增长：从 0 到 1 搭建账号近两年数据库，数据复盘输出优化意见；运营期间小红书粉丝由 6000 增至 1.3 万，平均互动率提升 30%", detail: "mars-social" }, { text: "深度参与大型活动——2026 上海它博会，推进论坛、晚宴、展位、现场活动与内容传播", detail: "mars-event" }, { text: "客户运营与赋能：通过专业课程、客户内容共创与持续服务赋能 B 端繁育客户；同时协助运营皇家繁育学园小程序，完善客户学习与服务体验", detail: "mars-customer" }, { text: "KOL 运营：评估宠物垂类达人，2 位合作达人内容达到平台“质爆”标准", detail: "mars-kol" }],
     tags: ["内容增长", "客户运营", "项目运营", "达人投放", "市场研究"],
   },
   {
