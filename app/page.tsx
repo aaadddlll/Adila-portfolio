@@ -77,6 +77,10 @@ export default function Home() {
           <div className="about-notes">
             <p>为什么一个产品会被喜欢？为什么一条内容会被传播？为什么用户会做出选择？</p>
             <p>我习惯通过定性观察与数据分析寻找背后的规律，并将对消费者和市场的理解应用于内容、营销与运营实践。</p>
+            <div className="about-experience-summary">
+              <small>EXPERIENCE</small>
+              <p>在百事中国、玛氏中国和国融乐养的实习中，我做过消费者与行业研究、社媒内容与达人投放、B 端客户运营、活动策划和数据复盘，也越来越确定，自己想继续在互联网运营与市场营销方向做离用户更近的工作。</p>
+            </div>
           </div>
         </div>
       </section>

@@ -51,6 +51,9 @@ a { color: inherit; text-decoration: none; }
 .about-copy h2 em { color: #718079; font-style: normal; }
 .about-notes { margin-top: 70px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8vw; max-width: 850px; }
 .about-notes p { margin: 0; color: #4f5a54; }
+.about-experience-summary { grid-column: 1 / -1; display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; margin-top: 10px; padding-top: 24px; border-top: 1px solid var(--line); }
+.about-experience-summary small { padding-top: 7px; color: var(--muted); font-size: 9px; letter-spacing: .14em; }
+.about-experience-summary p { max-width: 700px; line-height: 1.9; }
 
 .work-nav { display: grid; grid-template-columns: 1fr 3fr; }
 .work-nav .section-label { display: block; }
@@ -256,7 +259,7 @@ footer h2 { margin: 34px 0 0; font-family: "Times New Roman", "Songti SC", STSon
   .hero { min-height: auto; padding-block: 34px 90px; grid-template-columns: 1fr; gap: 54px; }.portrait-frame { height: 56vh; }.hero-copy { order: -1; }.hero-copy h1 { margin-block: 28px 34px; font-size: 20vw; }.hero-copy h1 span:first-child { font-size: .55em; }.hero-intro { font-size: 15px; }
   .section, .detail-section { padding-block: 90px; }
   .about, .work-nav, .skills { grid-template-columns: 1fr; }.about .section-label, .work-nav .section-label, .skills .section-label { display: grid; margin-bottom: 48px; }
-  .about-notes, .work-links { grid-template-columns: 1fr; gap: 18px; }.about-notes { margin-top: 48px; }.work-links a { min-height: 290px; }
+  .about-notes, .work-links { grid-template-columns: 1fr; gap: 18px; }.about-notes { margin-top: 48px; }.about-experience-summary { grid-template-columns: 1fr; gap: 8px; margin-top: 12px; }.about-experience-summary small { padding-top: 0; }.work-links a { min-height: 290px; }
   .detail-title { grid-template-columns: 1fr; gap: 18px; }.detail-title > p { justify-self: start; }.exp-row, .project-static-row { grid-template-columns: 35px 1fr; }.exp-body { grid-column: 2; }.experience-company-list, .experience-selected { grid-template-columns: 1fr; }.experience-company-card { min-height: 500px; }.experience-company-card-selected { min-height: 460px; }.experience-company-detail { min-height: auto; padding: 28px 22px; }.company-case-detail { grid-column: auto; }
   .senior-report { grid-template-columns: 1fr; }.senior-report img { height: 270px; }.senior-report > div { min-height: 180px; }
   .exp-body li button span { float: none; display: block; width: max-content; margin: 5px 0 0; }.pepsi-case { margin-inline: -18px; padding: 28px 18px; }.case-head { flex-direction: column; }.case-summary { grid-template-columns: 1fr; }.case-summary dl, .mars-summary dl { grid-template-columns: 1fr 1fr; gap: 24px 10px; }.case-grid { grid-template-columns: 1fr; }.case-image { height: 500px; }.checkin-layout { grid-template-columns: 1fr; }.checkin-images img { height: 420px; }.academy-layout { grid-template-columns: 1fr; }.academy-gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }.academy-gallery figure { flex: 0 0 82%; scroll-snap-align: start; }.academy-gallery img { height: 500px; }.event-tabs { margin-right: -18px; }.event-tabs button { flex-basis: 210px; min-height: 180px; }.event-detail { min-height: 0; }.event-overview dl { grid-template-columns: 1fr; gap: 22px; }.photo-stack { width: 100%; height: 350px; }.photo-stack img { height: 300px; }.event-photo-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 180px); }.event-photo-grid img:first-child { grid-row: auto; }.event-photo-grid img:nth-child(4), .event-photo-grid img:nth-child(5) { grid-column: auto; }.event-metrics { grid-template-columns: 1fr 1fr; gap: 24px 0; }.compact-media-section .case-image { height: 420px; }
