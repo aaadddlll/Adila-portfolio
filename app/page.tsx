@@ -63,9 +63,9 @@ export default function Home() {
           <p>East China Normal University · Class of 2027</p>
         </div>
         <div className="hero-copy">
-          <p className="kicker">Consumer Insight · Brand Marketing · Strategy</p>
+          <p className="kicker">User Insight · Operations · Integrated Marketing</p>
           <h1><span>阿迪莱</span><span>Adila</span></h1>
-          <p className="hero-intro">你好，我是阿迪莱。<br/>华东师范大学社会学本科生，关注消费者洞察、品牌传播与整合营销。</p>
+          <p className="hero-intro">你好，我是阿迪莱，一名把社会学带进运营现场的人。<br/>我喜欢从用户反馈和数据里找线索，再把它们变成内容、活动和更顺手的用户体验。</p>
           <a className="text-link" href="#about">继续了解我 <span>↓</span></a>
         </div>
       </section>
@@ -73,10 +73,10 @@ export default function Home() {
       <section className="about section shell" id="about">
         <div className="section-label"><span>01</span><p>About me</p></div>
         <div className="about-copy">
-          <h2>我喜欢观察人和市场，<br/>把真实需求转化成<br/><em>清晰、有共鸣的沟通。</em></h2>
+          <h2>我喜欢观察人和市场，<br/>也喜欢和用户、客户聊一聊，<br/><em>找到真正值得做的事。</em></h2>
           <div className="about-notes">
-            <p>目前就读于华东师范大学社会学专业，预计 2027 年毕业。GPA 位于专业前 10%，持英语六级证书，并多次获得校级奖学金。</p>
-            <p>曾在百事中国、玛氏中国和国融乐养实习，实践覆盖消费者研究、社媒内容、品牌 Campaign、用户运营与跨部门项目推进。</p>
+            <p>我在华东师范大学读社会学，将于 2027 年毕业。比起只凭感觉做判断，我更习惯一边听人怎么说、一边看数据怎么走：做访谈、看社媒，也用 Excel、SPSS 和 NVivo 把零散信息理清楚。</p>
+            <p>我更享受把研究变成行动：做内容、跑活动、运营客户、复盘数据，也和不同团队一起把想法落地。希望下一份工作继续靠近用户，在互联网运营或市场营销中，把“为什么”想明白，也把“怎么做”做扎实。</p>
           </div>
         </div>
       </section>
