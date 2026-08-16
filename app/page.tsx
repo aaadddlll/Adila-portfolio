@@ -63,9 +63,8 @@ export default function Home() {
           <p>East China Normal University · Class of 2027</p>
         </div>
         <div className="hero-copy">
-          <p className="kicker">Consumer Insight · Brand Marketing · Strategy</p>
           <h1><span>阿迪莱</span><span>Adila</span></h1>
-          <p className="hero-intro"><strong>你好，我是阿迪莱，华东师范大学社会学本科生。</strong><br/>喜欢研究人，也喜欢研究市场。擅长用<strong>定量与定性的方法理解消费者、分析行业</strong>，从数据和反馈中发现规律，并将洞察应用于内容、营销与运营实践。</p>
+          <p className="hero-intro">你好，我是阿迪莱，华东师范大学社会学本科生。<br/>喜欢研究人，也喜欢研究市场。擅长用定量与定性的方法理解消费者、分析行业，从数据和反馈中发现规律，并将洞察应用于内容、营销与运营实践。</p>
           <a className="text-link" href="#about">继续了解我 <span>↓</span></a>
         </div>
       </section>
@@ -79,7 +78,7 @@ export default function Home() {
             <p>我习惯通过定性观察与数据分析寻找背后的规律，并将对消费者和市场的理解应用于内容、营销与运营实践。</p>
             <div className="about-experience-summary">
               <small>EXPERIENCE</small>
-              <p>在百事中国、玛氏中国和国融乐养的实习中，我做过消费者与行业研究、社媒内容与达人投放、B 端客户运营、活动策划和数据复盘，也越来越确定，自己想继续在互联网运营与市场营销方向做离用户更近的工作。</p>
+              <p>在百事中国、玛氏中国和国融乐养的实习中，我做过消费者与行业研究、社媒内容与达人投放、B 端客户运营、活动策划和数据复盘。这些经历锻炼了我从发现问题、理解需求，到整合资源、推动落地并复盘优化的完整工作能力。</p>
             </div>
           </div>
         </div>
