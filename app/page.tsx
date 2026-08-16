@@ -65,7 +65,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="kicker">Consumer Insight · Brand Marketing · Strategy</p>
           <h1><span>阿迪莱</span><span>Adila</span></h1>
-          <p className="hero-intro">你好，我是阿迪莱。<br/>华东师范大学社会学本科生，关注消费者洞察、品牌传播与整合营销。</p>
+          <p className="hero-intro"><strong>你好，我是阿迪莱，华东师范大学社会学本科生。</strong><br/>喜欢研究人，也喜欢研究市场。擅长用<strong>定量与定性的方法理解消费者、分析行业</strong>，从数据和反馈中发现规律，并将洞察应用于内容、营销与运营实践。</p>
           <a className="text-link" href="#about">继续了解我 <span>↓</span></a>
         </div>
       </section>
@@ -73,12 +73,11 @@ export default function Home() {
       <section className="about section shell" id="about">
         <div className="section-label"><span>01</span><p>About me</p></div>
         <div className="about-copy">
-          <h2>我喜欢观察人和市场，<br/>把真实需求转化成<br/><em>清晰、有共鸣的沟通。</em></h2>
+          <h2><strong>看到一个现象，<br/>我总喜欢问一句“为什么”。</strong></h2>
           <div className="about-notes">
-            <p>目前就读于华东师范大学社会学专业，预计 2027 年毕业。GPA 位于专业前 10%，持英语六级证书，并多次获得校级奖学金。</p>
-            <p>曾在百事中国、玛氏中国和国融乐养实习，实践覆盖消费者研究、社媒内容、品牌 Campaign、用户运营与跨部门项目推进。</p>
+            <p>为什么一个产品会被喜欢？为什么一条内容会被传播？为什么用户会做出选择？</p>
+            <p>我习惯通过定性观察与数据分析寻找背后的规律，并将对消费者和市场的理解应用于内容、营销与运营实践。</p>
           </div>
-          <div className="about-method" aria-label="我的工作方法"><small>HOW I WORK</small><div><span><b>01</b>观察用户</span><i>→</i><span><b>02</b>读懂数据</span><i>→</i><span><b>03</b>落地行动</span></div></div>
         </div>
       </section>
 
