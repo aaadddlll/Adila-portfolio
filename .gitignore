@@ -38,3 +38,8 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# local package cache and generated working files
+/.pnpm-store/
+/output/
+/tmp/
