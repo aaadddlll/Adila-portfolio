@@ -117,7 +117,7 @@ export default function Home() {
 
       <footer className="shell" id="contact">
         <div><p>04 · Contact</p><h2>期待与你<br/>认识。</h2></div>
-        <div className="contact-links"><a href="mailto:13565459253@163.com">13565459253@163.com ↗</a><a href="tel:13565459253">135 6545 9253 ↗</a><a href="/adila-resume.docx" download="阿迪莱简历.docx">下载简历 ↗</a></div>
+        <div className="contact-links"><a href="mailto:13565459253@163.com">13565459253@163.com ↗</a><a href="tel:13565459253">135 6545 9253 ↗</a></div>
         <div className="footer-note"><p>阿迪莱 Adila</p><p>华东师范大学 · 2027 届</p><a href="#top">回到顶部 ↑</a></div>
       </footer>
     </main>
